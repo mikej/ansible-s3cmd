@@ -34,7 +34,7 @@ gpg_encrypt = %(gpg_command)s -c --verbose --no-use-agent --batch --yes --passph
 gpg_passphrase =
 guess_mime_type = True
 host_base = {{ s3cmd_host_base | default('s3.amazonaws.com') }}
-host_bucket {{ s3cmd_host_bucket | default('%(bucket)s.s3.amazonaws.com') }}
+host_bucket = {{ s3cmd_host_bucket | default('%(bucket)s.s3.amazonaws.com') }}
 human_readable_sizes = False
 invalidate_default_index_on_cf = False
 invalidate_default_index_root_on_cf = True
