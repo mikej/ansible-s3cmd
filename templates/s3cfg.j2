@@ -33,8 +33,8 @@ gpg_decrypt = %(gpg_command)s -d --verbose --no-use-agent --batch --yes --passph
 gpg_encrypt = %(gpg_command)s -c --verbose --no-use-agent --batch --yes --passphrase-fd %(passphrase_fd)s -o %(output_file)s %(input_file)s
 gpg_passphrase =
 guess_mime_type = True
-host_base = endpoint
-host_bucket = %(bucket)s.s3.amazonaws.com
+host_base = {{ s3cmd_host_base | default('s3.amazonaws.com') }}
+host_bucket {{ s3cmd_host_bucket | default('%(bucket)s.s3.amazonaws.com') }}
 human_readable_sizes = False
 invalidate_default_index_on_cf = False
 invalidate_default_index_root_on_cf = True
